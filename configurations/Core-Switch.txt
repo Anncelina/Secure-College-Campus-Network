@@ -1,0 +1,731 @@
+
+
+
+Press RETURN to get started!
+
+
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/7, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/8, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/9, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/11, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to up
+
+
+Switch>en 
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int range fa0/2-3
+Switch(config-if-range)#channel-group 1 mode active
+%EC-5-L3DONTBNDL2: Fa0/2 suspended: LACP currently not enabled on the remote port.
+%EC-5-L3DONTBNDL2: Fa0/3 suspended: LACP currently not enabled on the remote port.
+Switch(config-if-range)#
+Creating a port-channel interface Port-channel 1
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+Switch(config-if-range)#exit
+Switch(config)#int port-channel 1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+Switch(config-if)#exit
+Switch(config)#int range fa0/4-5
+Switch(config-if-range)#channel-group 2 mode active
+%EC-5-L3DONTBNDL2: Fa0/4 suspended: LACP currently not enabled on the remote port.
+%EC-5-L3DONTBNDL2: Fa0/5 suspended: LACP currently not enabled on the remote port.
+Switch(config-if-range)#
+Creating a port-channel interface Port-channel 2
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+Switch(config-if-range)#exit
+Switch(config)#int port-channel 2
+Switch(config-if)#
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+Switch(config-if)#exit
+Switch(config)#int range fa0/6-7
+Switch(config-if-range)#channel-group 3 mode active
+%EC-5-L3DONTBNDL2: Fa0/6 suspended: LACP currently not enabled on the remote port.
+%EC-5-L3DONTBNDL2: Fa0/7 suspended: LACP currently not enabled on the remote port.
+Switch(config-if-range)#
+Creating a port-channel interface Port-channel 3
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+Switch(config-if-range)#exit
+Switch(config)#int port-channel 3
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+Switch(config-if)#exit
+Switch(config)#int range fa0/8-9
+Switch(config-if-range)#channel-group 4 mode active
+%EC-5-L3DONTBNDL2: Fa0/8 suspended: LACP currently not enabled on the remote port.
+%EC-5-L3DONTBNDL2: Fa0/9 suspended: LACP currently not enabled on the remote port.
+Switch(config-if-range)#
+Creating a port-channel interface Port-channel 4
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to up
+
+Switch(config-if-range)#exit
+Switch(config)#int port-channel 4
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to up
+
+Switch(config-if)#exit
+Switch(config)#int range fa0/10-11
+Switch(config-if-range)#channel-group 5 mode active
+%EC-5-L3DONTBNDL2: Fa0/10 suspended: LACP currently not enabled on the remote port.
+%EC-5-L3DONTBNDL2: Fa0/11 suspended: LACP currently not enabled on the remote port.
+Switch(config-if-range)#
+Creating a port-channel interface Port-channel 5
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to up
+
+Switch(config-if-range)#exit
+Switch(config)#int port-channel 5
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to up
+
+Switch(config-if)#exit
+Switch(config)#do write
+Building configuration...
+[OK]
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#show etherchannel summary
+Flags:  D - down        P - in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 5
+Number of aggregators:           5
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+----------------------------------------------
+
+1      Po1(SU)           LACP   Fa0/2(P) Fa0/3(P) 
+2      Po2(SU)           LACP   Fa0/4(P) Fa0/5(P) 
+3      Po3(SU)           LACP   Fa0/6(P) Fa0/7(P) 
+4      Po4(SU)           LACP   Fa0/8(P) Fa0/9(P) 
+5      Po5(SU)           LACP   Fa0/10(P) Fa0/11(P) 
+Switch#en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name ECE
+Switch(config-vlan)#exit
+Switch(config)#vlan 20
+Switch(config-vlan)#name CSE
+Switch(config-vlan)#exit
+Switch(config)#vlan 30
+Switch(config-vlan)#name LIBRARY
+Switch(config-vlan)#exit
+Switch(config)#vlan 40
+Switch(config-vlan)#name LAB
+Switch(config-vlan)#exit
+Switch(config)#vlan 50
+Switch(config-vlan)#name ADMIN
+Switch(config-vlan)#exit
+Switch(config)#vlan 99
+Switch(config-vlan)#name NATIVE
+Switch(config-vlan)#exit
+Switch(config)#do write
+Building configuration...
+[OK]
+
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#interface port-channel 1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#interface port-channel 2
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#interface port-channel 3
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#interface port-channel 4
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#interface port-channel 5
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#end
+Switch#write
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/7, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/9, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to up
+
+%LINK-3-UPDOWN: Interface Port-channel5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/11, changed state to up
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+%LINK-5-CHANGED: Interface Port-channel1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to up
+
+%LINK-5-CHANGED: Interface Port-channel2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel2, changed state to up
+
+%LINK-5-CHANGED: Interface Port-channel3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel3, changed state to up
+
+%LINK-5-CHANGED: Interface Port-channel4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel4, changed state to up
+
+%LINK-5-CHANGED: Interface Port-channel5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel5, changed state to up
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/4 (99), with Switch FastEthernet0/1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/5 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/5 (99), with Switch Port-channel2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/7 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/7 (99), with Switch Port-channel3 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/6 (99), with Switch FastEthernet0/1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/10 (99), with Switch FastEthernet0/1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/2 (99), with Switch FastEthernet0/1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/9 (99), with Switch FastEthernet0/1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/8 (99), with Switch FastEthernet0/1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/9 (99), with Switch Port-channel4 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/8 (99), with Switch Port-channel4 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/9 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/8 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/11 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/10 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/11 (99), with Switch Port-channel5 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/10 (99), with Switch Port-channel5 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/3 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/2 (99), with Switch FastEthernet0/2 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/3 (99), with Switch Port-channel1 (1).
+
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/2 (99), with Switch Port-channel1 (1).
+%SPANTREE-2-RECV_PVID_ERR: Received BPDU with inconsistent peer vlan id 1 on Port-channel3 VLAN99.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking Port-channel3 on VLAN0099. Inconsistent local vlan.
+
+%SPANTREE-2-RECV_PVID_ERR: Received BPDU with inconsistent peer vlan id 1 on Port-channel2 VLAN99.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking Port-channel2 on VLAN0099. Inconsistent local vlan.
+Switch#show interfaces trunk
+Port        Mode         Encapsulation  Status        Native vlan
+Po1         on           802.1q         trunking      99
+Po2         on           802.1q         trunking      99
+Po3         on           802.1q         trunking      99
+Po4         on           802.1q         trunking      99
+Po5         on           802.1q         trunking      99
+
+Port        Vlans allowed on trunk
+Po1         1-1005
+Po2         1-1005
+Po3         1-1005
+Po4         1-1005
+Po5         1-1005
+
+Port        Vlans allowed and active in management domain
+Po1         1,10,20,30,40,50,99
+Po2         1,10,20,30,40,50,99
+Po3         1,10,20,30,40,50,99
+Po4         1,10,20,30,40,50,99
+Po5         1,10,20,30,40,50,99
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Po1         1,10,20,30,40,50,99
+Po2         1,10,20,30,40,50,99
+Po3         1,10,20,30,40,50,99
+Po4         1,10,20,30,40,50,99
+Po5         none
+
+Switch#
+Switch#
+Switch#
+Switch#show etherchannel summary
+Flags:  D - down        P - in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 5
+Number of aggregators:           5
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+----------------------------------------------
+
+1      Po1(SU)           LACP   Fa0/2(P) Fa0/3(P) 
+2      Po2(SU)           LACP   Fa0/4(P) Fa0/5(P) 
+3      Po3(SU)           LACP   Fa0/6(P) Fa0/7(P) 
+4      Po4(SU)           LACP   Fa0/8(P) Fa0/9(P) 
+5      Po5(SU)           LACP   Fa0/10(P) Fa0/11(P) 
+Switch#show spanning-tree vlan 50
+VLAN0050
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32818
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32818  (priority 32768 sys-id-ext 50)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#enable
+% Incomplete command.
+Switch(config)#configure terminal
+                ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#interface fa0/1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)#exit
+Switch(config)#end
+Switch#write
+%SYS-5-CONFIG_I: Configured from console by console
+
+Building configuration...
+[OK]
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname CORE-SW
+CORE-SW(config)#ip domain-name college
+CORE-SW(config)#username admin privilege 15 secret 1234@
+CORE-SW(config)#crypto key generate rsa
+The name for the keys will be: CORE-SW.college
+Choose the size of the key modulus in the range of 360 to 4096 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 1024
+% Generating 1024 bit RSA keys, keys will be non-exportable...[OK]
+
+CORE-SW(config)#ip ssh version 2
+*Mar 1 2:1:16.421: %SSH-5-ENABLED: SSH 1.99 has been enabled
+CORE-SW(config)#line vty 0 15
+CORE-SW(config-line)#login local
+CORE-SW(config-line)#transport input ssh
+CORE-SW(config-line)#exit
+CORE-SW(config)#end
+CORE-SW#
+%SYS-5-CONFIG_I: Configured from console by console
+
+CORE-SW#do write
+           ^
+% Invalid input detected at '^' marker.
+	
+CORE-SW#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CORE-SW(config)#do wrte
+Translating "wrte"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+
+CORE-SW(config)#write
+                ^
+% Invalid input detected at '^' marker.
+	
+CORE-SW(config)#exit
+CORE-SW#
+%SYS-5-CONFIG_I: Configured from console by console
+write
+Building configuration...
+[OK]
+CORE-SW#enable
+CORE-SW#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CORE-SW(config)#
+CORE-SW(config)#interface vlan 99
+CORE-SW(config-if)#ip address 192.168.99.2 255.255.255.0
+CORE-SW(config-if)#no shutdown
+CORE-SW(config-if)#exit
+CORE-SW(config)#
+CORE-SW(config)#ip default-gateway 192.168.99.1
+CORE-SW(config)#
+CORE-SW(config)#end
+CORE-SW#write
+%LINK-5-CHANGED: Interface Vlan99, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan99, changed state to up
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+Building configuration...
+[OK]
+
+CORE-SW>show spanning-tree
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32769
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32778
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32778  (priority 32768 sys-id-ext 10)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+VLAN0020
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32788
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32788  (priority 32768 sys-id-ext 20)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+VLAN0030
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32798
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32798  (priority 32768 sys-id-ext 30)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+VLAN0040
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32808
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32808  (priority 32768 sys-id-ext 40)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+VLAN0050
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32818
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32818  (priority 32768 sys-id-ext 50)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p
+
+VLAN0099
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32867
+             Address     0000.0CD3.B6E7
+             Cost        12
+             Port        28(Port-channel2)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32867  (priority 32768 sys-id-ext 99)
+             Address     0050.0F90.E277
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/1            Desg FWD 19        128.1    P2p
+Po2              Root FWD 12        128.28   P2p
+Po4              Desg FWD 12        128.30   P2p
+Po5              Desg FWD 12        128.31   P2p
+Po1              Desg FWD 12        128.27   P2p
+Po3              Desg FWD 12        128.29   P2p

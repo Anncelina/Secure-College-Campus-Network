@@ -1,0 +1,152 @@
+
+Router>enable
+Router#show running-config | section router ospf
+Router#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES unset  administratively down down 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+Router#enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet0/0
+Router(config-if)#ip address 10.0.0.2 255.255.255.252
+Router(config-if)#no shutdown
+
+Router(config-if)#exit
+Router(config)#end
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     10.0.0.2        YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+Router#ping 10.0.0.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/0 ms
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router ospf 1
+Router(config-router)#router-id 1.1.1.1
+Router(config-router)#network 10.0.0.0 0.0.0.3 area 0
+Router(config-router)#exit
+Router(config)#end
+Router#enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gigabitEthernet0/1
+Router(config-if)#ip address 203.0.113.2 255.255.255.252
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     10.0.0.2        YES manual up                    up 
+GigabitEthernet0/1     203.0.113.2     YES manual up                    down 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Vlan1                  unassigned      YES unset  administratively down down
+
+Router#enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.20.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.30.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.40.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.50.0 0.0.0.255
+Router(config)#
+Router(config)#interface gigabitEthernet0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#
+Router(config)#interface gigabitEthernet0/1
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#
+Router(config)#ip nat inside source list 1 interface gigabitEthernet0/1 overload
+Router(config)#
+Router(config)#end
+Router#write
+%SYS-5-CONFIG_I: Configured from console by console
+
+Building configuration...
+[OK]
+
+Router#enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.20.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.30.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.40.0 0.0.0.255
+Router(config)#access-list 1 permit 192.168.50.0 0.0.0.255
+Router(config)#
+Router(config)#interface gigabitEthernet0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#
+Router(config)#interface gigabitEthernet0/1
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#
+Router(config)#ip nat inside source list 1 interface gigabitEthernet0/1 overload
+Router(config)#
+Router(config)#end
+Router#write
+%SYS-5-CONFIG_I: Configured from console by console
+
+Building configuration...
+[OK]
+Router#show ip nat statistics
+Total translations: 0 (0 static, 0 dynamic, 0 extended)
+Outside Interfaces: GigabitEthernet0/1
+Inside Interfaces: GigabitEthernet0/0
+Hits: 0  Misses: 0
+Expired translations: 0
+Dynamic mappings:
+Router#show ip nat translations
+Router#ping 203.0.113.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 203.0.113.1, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 0/0/0 ms
+
+Router#ping 203.0.113.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 203.0.113.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/0/1 ms
+
+Router#show ip nat translations
+Router#enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 0.0.0.0 0.0.0.0 203.0.113.1
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip nat translations
+Pro  Inside global     Inside local       Outside local      Outside global
+icmp 203.0.113.2:29    192.168.10.2:29    203.0.113.1:29     203.0.113.1:29
+icmp 203.0.113.2:30    192.168.10.2:30    203.0.113.1:30     203.0.113.1:30
+icmp 203.0.113.2:31    192.168.10.2:31    203.0.113.1:31     203.0.113.1:31
+icmp 203.0.113.2:32    192.168.10.2:32    203.0.113.1:32     203.0.113.1:32
